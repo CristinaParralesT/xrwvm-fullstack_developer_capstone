@@ -136,3 +136,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = []
 
+
+# --- Configuración para el laboratorio ---
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.proxy.cognitiveclass.ai']
+CSRF_TRUSTED_ORIGINS = ['https://*.proxy.cognitiveclass.ai']
+TEMPLATES[0]['DIRS'] = [
+    os.path.join(BASE_DIR, 'frontend/static'),
+    os.path.join(BASE_DIR, 'frontend/build'),
+    os.path.join(BASE_DIR, 'frontend/build/static'),
+]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'frontend/static'),
+    os.path.join(BASE_DIR, 'frontend/build'),
+    os.path.join(BASE_DIR, 'frontend/build/static'),
+]
